@@ -1,0 +1,10 @@
+framework module PDFReader {
+  umbrella header "PDFReader.h"
+
+  export *
+  module * { export * }
+}
+
+module PDFReader.Swift {
+    header "PDFReader-Swift.h"
+}
