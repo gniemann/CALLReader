@@ -20,6 +20,7 @@ class PublicationViewController: UIViewController, DownloadStatusViewDelegate {
     @IBOutlet weak var downloadStatus: DownloadStatusView!
     @IBOutlet weak var expandedDescirptionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var similarPubsView: UIView!
     
     var pub: Publication!
     var hasSetExpandedText = false
@@ -45,7 +46,11 @@ class PublicationViewController: UIViewController, DownloadStatusViewDelegate {
         downloadStatus.status = pub.status
         downloadStatus.delegate = self
         
-        setupSimilarScroll()
+        if pub.similar.isEmpty {
+            similarPubsView.isHidden = true
+        } else {
+            setupSimilarScroll()
+        }
         
         title = pub.title
         

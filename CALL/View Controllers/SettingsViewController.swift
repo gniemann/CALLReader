@@ -9,38 +9,13 @@
 import UIKit
 import MessageUI
 
-class SettingsViewController: UIViewController {
-    
-    init() {
-        super.init(nibName: nil, bundle: Bundle.main)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let settingsTable = SettingsTableViewController()
-        preferredContentSize = settingsTable.preferredContentSize
-        let navController = UINavigationController(rootViewController: settingsTable)
-        view.addSubview(navController.view)
-        addChildViewController(navController)
-        navController.didMove(toParentViewController: self)
-        
-        
-    }
-}
-
 /*
  The SettingsTableViewController shows the app settings
  It has two sections - notifications and auto downloads. Both are filled with the publication types
  
  The footer is the website and feeedback links
 */
-class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate{
+class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate{
     
     var sectionTitles: [String] = ["Receive notifications for...", "Auto download new..."]
     var settingsKeys: [String] = ["notifications", "downloads"]
@@ -48,7 +23,9 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     var defaults: UserDefaults!
     
     static func makeInNavController() -> UINavigationController {
-        let settingsVC
+        let settingsVC = SettingsViewController()
+        let settingsNav = UINavigationController(rootViewController: settingsVC)
+        return settingsNav
     }
     
     init() {

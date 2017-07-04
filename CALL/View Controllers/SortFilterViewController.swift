@@ -8,40 +8,8 @@
 
 import UIKit
 
-protocol SortFilterDelegate {
+protocol SortFilterDelegate: class {
     func updateSortFilterOptions(_ options: SortFilterOptions)
-}
-
-class SortFilterViewController: UIViewController {
-    var options: SortFilterOptions!
-    var sortFilterTableVC: SortFilterTableViewController!
-    var delegate: SortFilterDelegate?
-    
-    init(options: SortFilterOptions) {
-        super.init(nibName: nil, bundle: Bundle.main)
-        self.options = options
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // instantiate the actual VC
-        let storyboard = UIStoryboard(name: "SortFilterStoryboard", bundle: nil)
-        sortFilterTableVC = storyboard.instantiateViewController(withIdentifier: "SortFilterVC") as! SortFilterTableViewController
-        sortFilterTableVC.options = self.options
-        sortFilterTableVC.delegate = delegate
-        
-        // set up the navigation controller and nav bar
-        let nav = UINavigationController(rootViewController: sortFilterTableVC)
-        view.addSubview(nav.view)
-        addChildViewController(nav)
-        nav.didMove(toParentViewController: self)
-    }
-   
 }
 
 class SwitchTableViewCell: UITableViewCell {
@@ -60,12 +28,12 @@ class TypePickerTableViewCell: UITableViewCell {
     
 }
 
-class SortFilterTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SortFilterViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
-    var delegate: SortFilterDelegate?
+    weak var delegate: SortFilterDelegate?
     
     var sections = ["Sorting Options", "Order to display publication types", "Filter Publications"]
     
@@ -74,6 +42,15 @@ class SortFilterTableViewController: UITableViewController, UIPickerViewDelegate
     
     var cells: [[UITableViewCell]]!
     var visibleCells: [[Bool]]!
+    
+    static func makeInNavController(options: SortFilterOptions, delegate: SortFilterDelegate) -> UINavigationController {
+        let sortVC = UIStoryboard(name: "SortFilterStoryboard", bundle: nil).instantiateInitialViewController() as! SortFilterViewController
+        let sortNav = UINavigationController(rootViewController: sortVC)
+        
+        sortVC.options = options
+        sortVC.delegate = delegate
+        return sortNav
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

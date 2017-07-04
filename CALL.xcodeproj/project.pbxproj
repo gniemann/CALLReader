@@ -16,7 +16,6 @@
 		035227551EFF6135009D773F /* PublicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352274F1EFF6135009D773F /* PublicationViewController.swift */; };
 		035227561EFF6135009D773F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035227501EFF6135009D773F /* SettingsViewController.swift */; };
 		035227571EFF6135009D773F /* SortFilterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035227511EFF6135009D773F /* SortFilterStoryboard.storyboard */; };
-		035227581EFF6135009D773F /* SortFilterTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035227521EFF6135009D773F /* SortFilterTableViewController.xib */; };
 		035227591EFF6135009D773F /* SortFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035227531EFF6135009D773F /* SortFilterViewController.swift */; };
 		035227601EFF613B009D773F /* DownloadStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352275B1EFF613B009D773F /* DownloadStatusView.swift */; };
 		035227611EFF613B009D773F /* DownloadStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0352275C1EFF613B009D773F /* DownloadStatusView.xib */; };
@@ -45,7 +44,6 @@
 		0352274F1EFF6135009D773F /* PublicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicationViewController.swift; sourceTree = "<group>"; };
 		035227501EFF6135009D773F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		035227511EFF6135009D773F /* SortFilterStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SortFilterStoryboard.storyboard; sourceTree = "<group>"; };
-		035227521EFF6135009D773F /* SortFilterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortFilterTableViewController.xib; sourceTree = "<group>"; };
 		035227531EFF6135009D773F /* SortFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFilterViewController.swift; sourceTree = "<group>"; };
 		0352275B1EFF613B009D773F /* DownloadStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadStatusView.swift; sourceTree = "<group>"; };
 		0352275C1EFF613B009D773F /* DownloadStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadStatusView.xib; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				0352274F1EFF6135009D773F /* PublicationViewController.swift */,
 				035227501EFF6135009D773F /* SettingsViewController.swift */,
 				035227511EFF6135009D773F /* SortFilterStoryboard.storyboard */,
-				035227521EFF6135009D773F /* SortFilterTableViewController.xib */,
 				035227531EFF6135009D773F /* SortFilterViewController.swift */,
 			);
 			name = "View Controllers";
@@ -230,7 +227,6 @@
 				03989D8F1F0AA10B00C26DDE /* seedDatabase.realm in Resources */,
 				035227631EFF613B009D773F /* PublicationTableViewCell.xib in Resources */,
 				035227571EFF6135009D773F /* SortFilterStoryboard.storyboard in Resources */,
-				035227581EFF6135009D773F /* SortFilterTableViewController.xib in Resources */,
 				0352273C1EFF6035009D773F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -255,7 +255,7 @@ class PublicationManager : NSObject, URLSessionDelegate, URLSessionDownloadDeleg
             
             
             // uncomment to save the Realm file for bundling
-            self.writeDatabaseToFile()
+            //self.writeDatabaseToFile()
         }
     }
     

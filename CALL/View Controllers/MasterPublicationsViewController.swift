@@ -292,13 +292,12 @@ class MasterPublicationsViewController: UITableViewController, UISearchResultsUp
     }
     
     func settingsPressed(_ sender: UIBarButtonItem) {
-        let settingsView = SettingsViewController()
+        let settingsView = SettingsViewController.makeInNavController()
         presentAsPopover(settingsView, sender: sender)
     }
     
     func sortFilterPressed(_ sender: UIBarButtonItem) {
-        let sortFilter = SortFilterViewController(options: sortFilterOptions)
-        sortFilter.delegate = self
+        let sortFilter = SortFilterViewController.makeInNavController(options: sortFilterOptions, delegate: self)
         presentAsPopover(sortFilter, sender: sender)
     }
     
@@ -371,7 +370,8 @@ class MasterPublicationsViewController: UITableViewController, UISearchResultsUp
         let words = searchText.components(separatedBy: " ")
         for word in words {
             visiblePublications = visiblePublications.map {
-                $0.filter("title CONTAINS[c] %@ OR abstract CONTAINS[c] %@ OR terms CONTAINS[c] %@", word, word, word)
+                $0.filter("title CONTAINS[c] %@ OR abstract CONTAINS[c] %@ OR terms CONTAINS[c] %@ OR notes CONTAINS[c] %@",
+                          word, word, word, word)
             }
         }
     }

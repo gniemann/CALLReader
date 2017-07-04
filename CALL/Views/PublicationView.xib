@@ -20,6 +20,7 @@
                 <outlet property="notesTextView" destination="WqW-dZ-1bI" id="KXR-LR-2aj"/>
                 <outlet property="publishedLabel" destination="8fS-S6-JXr" id="q0K-0e-4pT"/>
                 <outlet property="scrollView" destination="lKk-6T-0CE" id="mdm-qt-Ntc"/>
+                <outlet property="similarPubsView" destination="oJu-2l-r5N" id="jrk-h2-ank"/>
                 <outlet property="similarScrollView" destination="kyj-fR-d0j" id="xbl-UQ-JAY"/>
                 <outlet property="titleLabel" destination="jNO-1i-njm" id="SS7-cP-VAJ"/>
                 <outlet property="view" destination="r3Y-zj-T3r" id="OcT-Ro-EP7"/>
